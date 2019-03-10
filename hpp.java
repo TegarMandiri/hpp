@@ -17,7 +17,7 @@ public class hpp{
 		System.out.println("---------------- Bahan Baku ----------------");
 		System.out.println(" ");
 
-	//Total bahan mentah
+	//Bahan baku
 		int total = 0;
 		System.out.print("Total jenis bahan baku 		  => ");
 		int numofbhn = keyboard.nextInt();
@@ -29,7 +29,8 @@ public class hpp{
 			System.out.print("Biaya bahan baku	      " + (s+1) + " = ");
 			arrofbhn[s] = keyboard.nextInt();
 		}
-
+		
+		//Total bahan baku
 			System.out.println("---------------------------------");
 		for (int i = 0; i < arrofbhn.length; i++)
 			total += (int)arrofbhn[i];
@@ -55,6 +56,7 @@ public class hpp{
 		System.out.print("Waktu kerja (hari)		= ");
 		waktu= keyboard.nextInt();
 		
+		//Total tenaga kerja
 		double tktotal = tenagakerja * waktu * harga;
 		DecimalFormat tktotalformat = new DecimalFormat("#.##");
 		System.out.println("---------------------------------");
@@ -85,6 +87,7 @@ public class hpp{
 		System.out.print("Masukan jumlah unit	        = ");
 		unit = keyboard.nextDouble();
 
+		//Total per unit
 		System.out.println("---------------------------------");
 		tunit = alltotal / unit;
 		DecimalFormat tunitformat = new DecimalFormat("#.##");
