@@ -123,7 +123,7 @@ public class hpp{
 		System.out.println(" ");
 
 		Double ttunit, talltotal, tlunit, ttlunit;
-		System.out.println("Total Unit 			= Rp " + tunit);
+		System.out.println("Total Unit 			= Rp " + unit);
 
 		talltotal = alltotal;
 		DecimalFormat talltotalformat = new DecimalFormat("#.##");
