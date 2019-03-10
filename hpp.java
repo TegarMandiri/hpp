@@ -19,7 +19,7 @@ public class hpp{
 
 	//Total bahan mentah
 		int total = 0;
-		System.out.print("Total bahan Baku 	 	  => ");
+		System.out.print("Total jenis bahan baku 		  => ");
 		int numofbhn = keyboard.nextInt();
  
 		//Array bahan baku
@@ -48,7 +48,7 @@ public class hpp{
 		tenagakerja = keyboard.nextInt();
 		System.out.println(" ");
 
-		System.out.print("Gaji per waktu			= ");
+		System.out.print("Gaji 1 hari per orang		= ");
 		harga = keyboard.nextDouble();
 		System.out.println(" ");
 
