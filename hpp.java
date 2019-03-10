@@ -73,7 +73,7 @@ public class hpp{
 		System.out.println(" ");
 
 
-	//Menghitung perunit
+	//Menghitung per unit
 		Double unit, tunit;
 		System.out.println("---------- Menghitung biaya per unit ----------");
 		System.out.println(" ");
