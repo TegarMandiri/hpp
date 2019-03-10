@@ -103,7 +103,7 @@ public class hpp{
 		Double persen, hunit, lunit;
 
 		System.out.println("Harga per unit			= Rp " + tunitformat.format(tunit));
-		System.out.print("Laba persen per unit 		=  ");
+		System.out.print("Laba persen per unit 		= ");
 		persen = keyboard.nextDouble();
 
 		System.out.println(" ");
