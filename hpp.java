@@ -1,3 +1,4 @@
+//unfinished program
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
