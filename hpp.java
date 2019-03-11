@@ -1,4 +1,4 @@
-//unfinished program
+//Finished, will added more feature++
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
@@ -11,9 +11,9 @@ public class hpp{
 	//Title
 		System.out.println(" ");
 		System.out.println(" ");
-		System.out.println("//Copryright Tegar Mandiri 2019");
+		System.out.println("//Copyright Tegar Mandiri 2019");
 		System.out.println(" ");
-		System.out.println("********** Menghitung biaya HPP dan harga jual per Unit **********");
+		System.out.println("********** Menghitung biaya HPP, harga jual per Unit dan Laba **********");
 		System.out.println(" ");
 		System.out.println(" ");
 		System.out.println(" ");
@@ -86,12 +86,13 @@ public class hpp{
 		Double alltotal = total + tktotal + overhead;
 		DecimalFormat alltotalformat = new DecimalFormat("#.##");
 		System.out.println("Total Harga Pokok Produksi 	= Rp " + alltotalformat.format(alltotal));
-		System.out.print("Masukan jumlah unit	        = Rp ");
+		System.out.print("Masukan jumlah unit	        = ");
 		unit = keyboard.nextDouble();
 
 		//Total per unit
 		System.out.println(" ");
 		System.out.println("---------------------------------");
+
 		tunit = alltotal / unit;
 		DecimalFormat tunitformat = new DecimalFormat("#.##");
 		System.out.println("Harga per unit			= Rp " + tunitformat.format(tunit));
@@ -104,16 +105,16 @@ public class hpp{
 		Double persen, hunit, lunit;
 
 		System.out.println("Harga per unit			= Rp " + tunitformat.format(tunit));
-		System.out.print("Laba persen per unit 		= ");
+		System.out.print("Laba persen per unit 		= (%) ");
 		persen = keyboard.nextDouble();
 
 		System.out.println(" ");
 		System.out.println("---------------------------------");
-		hunit = tunit + (tunit*persen/100);
+		hunit = tunit + (tunit*persen/100);;
 		DecimalFormat hunitformat = new DecimalFormat("#.##");
 		System.out.println("Harga jual produk 		= Rp " + hunitformat.format(hunit));
 
-		lunit = tunit - (tunit*persen/100);
+		lunit = persen / 100 * tunit;
 		DecimalFormat lunitformat = new DecimalFormat("#.##");
 		System.out.println("Laba per unit 			= Rp " + lunitformat.format(lunit));
 		System.out.println(" ");
@@ -122,13 +123,13 @@ public class hpp{
 	//Keuntungan laba unit
 		System.out.println("------------ Keuntungan Total Laba ------------");
 		System.out.println(" ");
+		Double tttunit, ttunit, talltotal, tlunit, ttlunit;
 
-		Double ttunit, talltotal, tlunit, ttlunit;
-		System.out.println("Total Unit 			= Rp " + unit);
+		tttunit = unit;
+		DecimalFormat tttunitformat = new DecimalFormat("#.##");
+		System.out.println("Total Unit 			= " + tttunitformat.format(tttunit));
 
-		talltotal = alltotal;
-		DecimalFormat talltotalformat = new DecimalFormat("#.##");
-		System.out.println("Total Harga Pokok Produksi 	= Rp " + talltotalformat.format(talltotal));
+		System.out.println("Total Harga Pokok Produksi 	= Rp " + alltotalformat.format(alltotal));
 
 		ttunit = tunit;
 		DecimalFormat ttunitformat = new DecimalFormat("#.##");
@@ -141,7 +142,8 @@ public class hpp{
 
 		System.out.println("---------------------------------");
 
-		ttlunit = tunit * ttunit;
-		System.out.println("Total Laba Unit 		= Rp " + ttlunit);
+		ttlunit = unit * tlunit;
+		DecimalFormat ttlunitformat = new DecimalFormat("#.##");
+		System.out.println("Total Laba Unit 		= Rp " + ttlunitformat.format(ttlunit));
 	}
 }
