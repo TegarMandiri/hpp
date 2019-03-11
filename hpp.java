@@ -123,7 +123,7 @@ public class hpp{
 	//Keuntungan laba unit
 		System.out.println("------------ Keuntungan Total Laba ------------");
 		System.out.println(" ");
-		Double tttunit, ttunit, talltotal, tlunit, ttlunit;
+		Double tttunit, ttunit, talltotal, tlunit, ttlunit, ttttunit;
 
 		tttunit = unit;
 		DecimalFormat tttunitformat = new DecimalFormat("#.##");
@@ -131,9 +131,7 @@ public class hpp{
 
 		System.out.println("Total Harga Pokok Produksi 	= Rp " + alltotalformat.format(alltotal));
 
-		ttunit = tunit;
-		DecimalFormat ttunitformat = new DecimalFormat("#.##");
-		System.out.println("Harga per unit			= Rp " + ttunitformat.format(ttunit));
+		System.out.println("Harga jual produk 		= Rp " + hunitformat.format(hunit));
 
 		tlunit = lunit;
 		DecimalFormat tlunitformat = new DecimalFormat("#.##");
@@ -142,8 +140,13 @@ public class hpp{
 
 		System.out.println("---------------------------------");
 
+		ttttunit = hunit * 100;
+		DecimalFormat ttttunitformat = new DecimalFormat("#.##");
+		System.out.println("Total yang didapatkan		= Rp " + ttttunitformat.format(ttttunit));
+
 		ttlunit = unit * tlunit;
 		DecimalFormat ttlunitformat = new DecimalFormat("#.##");
-		System.out.println("Total Laba Unit 		= Rp " + ttlunitformat.format(ttlunit));
+		System.out.println("Total Laba 		 	= Rp " + ttlunitformat.format(ttlunit));
 	}
 }
+
