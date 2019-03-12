@@ -1,4 +1,4 @@
-//Finished, will added more feature++
+//Finished, will added more features++
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
