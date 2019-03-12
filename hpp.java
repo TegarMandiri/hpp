@@ -1,4 +1,5 @@
 //Finished, will added more features++
+//Ver. 0.27
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
@@ -12,6 +13,7 @@ public class hpp{
 		System.out.println(" ");
 		System.out.println(" ");
 		System.out.println("//Copyright Tegar Mandiri 2019");
+		System.out.println("-Ver. 0.27");
 		System.out.println(" ");
 		System.out.println("********** Menghitung biaya HPP, harga jual per Unit dan Laba **********");
 		System.out.println(" ");
