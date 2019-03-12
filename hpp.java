@@ -140,7 +140,7 @@ public class hpp{
 
 		System.out.println("---------------------------------");
 
-		ttttunit = hunit * 100;
+		ttttunit = hunit * tttunit;
 		DecimalFormat ttttunitformat = new DecimalFormat("#.##");
 		System.out.println("Total yang didapatkan		= Rp " + ttttunitformat.format(ttttunit));
 
