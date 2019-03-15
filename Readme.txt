@@ -1,5 +1,7 @@
 ---------------------------- HPP PROGRAM ----------------------------
 
+/*Program menghitung Harga Pokok Produksi, Harga jual per unit, dan Laba Produk.*/
+
 //Credit Tegar Mandiri 2019
 //Program have a much bug, i haven't fixed it.
 //Program using Indonesia language (Bahasa)
@@ -13,5 +15,5 @@
 
 Contact for any issues,
 Regards
-
+tegarmndr@gmail.com
 -------------------- Thanks for using the program --------------------
