@@ -5,7 +5,8 @@
 //Program using Indonesia language (Bahasa)
 //Need to compile before run this program
 //How to use  : -Download hpp.java file
-                -Compile the program, if using Windows can use Command Prompt (Javac) or Eclipse, or any software supported for compile                    java file;
+                -Compile the program, if using Windows can use Command Prompt (Javac) or Eclipse, or any software supported for compile
+                 java file;
                 -If has compiled run the program;
                 -Input positive number (ex: 1000), without separate (ex: comma, dot, space);
                 -After that see how the program is work.
