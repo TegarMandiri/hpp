@@ -1,13 +1,16 @@
 //Finished, will added more features++
 //Ver. 0.27
+
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
 public class hpp{
 	public static void main(String[] args){
+		Scanner scan = new Scanner (System.in);
 
-		Scanner keyboard = new Scanner (System.in);
-
+//Program menghitung Harga Pokok Produksi, Harga jual per unit, dan Laba Produk.
+//Credit Tegar Mandiri 2019
+//Input Positive Number Without Separate (comma, dot, space), just input positive number.
 
 	//Title
 		System.out.println(" ");
@@ -25,14 +28,14 @@ public class hpp{
 	//Bahan baku
 		int total = 0;
 		System.out.print("Total jenis bahan baku      => ");
-		int numofbhn = keyboard.nextInt();
+		int numofbhn = scan.nextInt();
 
 		//Array bahan baku
 		int arrofbhn[] = new int[numofbhn];
 
 		for (int s = 0; s < arrofbhn.length; s++){
 			System.out.print("Biaya bahan baku        " + (s+1) + " = Rp ");
-			arrofbhn[s] = keyboard.nextInt();
+			arrofbhn[s] = scan.nextInt();
 		}
 
 		//Total bahan baku
@@ -52,13 +55,13 @@ public class hpp{
 		double harga;
 
 		System.out.print("Jumlah tenaga kerja		= ");
-		tenagakerja = keyboard.nextInt();
+		tenagakerja = scan.nextInt();
 
 		System.out.print("Gaji per orang			= Rp ");
-		harga = keyboard.nextDouble();
+		harga = scan.nextDouble();
 
 		System.out.print("Waktu kerja (hari)		= ");
-		waktu= keyboard.nextInt();
+		waktu= scan.nextInt();
 		
 		//Total tenaga kerja
 		double tktotal = tenagakerja * waktu * harga;
@@ -75,7 +78,7 @@ public class hpp{
 		System.out.println("------------------ Overhead ------------------");
 		System.out.println(" "); 
 		System.out.print("Biaya Overhead 			= Rp ");
-		overhead = keyboard.nextInt();
+		overhead = scan.nextInt();
 		System.out.println(" ");
 		System.out.println(" ");
 
@@ -89,7 +92,7 @@ public class hpp{
 		DecimalFormat alltotalformat = new DecimalFormat("#.##");
 		System.out.println("Total Harga Pokok Produksi 	= Rp " + alltotalformat.format(alltotal));
 		System.out.print("Masukan jumlah unit	        = ");
-		unit = keyboard.nextDouble();
+		unit = scan.nextDouble();
 
 		//Total per unit
 		System.out.println(" ");
@@ -108,7 +111,7 @@ public class hpp{
 
 		System.out.println("Harga per unit			= Rp " + tunitformat.format(tunit));
 		System.out.print("Laba persen per unit 		= (%) ");
-		persen = keyboard.nextDouble();
+		persen = scan.nextDouble();
 
 		System.out.println(" ");
 		System.out.println("---------------------------------");
