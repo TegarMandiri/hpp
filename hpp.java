@@ -21,7 +21,7 @@ public class hpp{
 		System.out.println(" ");
 		System.out.println(" ");
 		System.out.println("//Copyright Tegar Mandiri 2019");
-		System.out.println("-Ver. 1.25");
+		System.out.println("-Ver. 2.00");
 		System.out.println(" ");
 		System.out.println("********** Menghitung biaya HPP, harga jual per Unit dan Laba **********");
 		System.out.println(" ");
