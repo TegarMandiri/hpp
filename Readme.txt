@@ -3,9 +3,8 @@
 /*Program menghitung Harga Pokok Produksi, Harga jual per unit, dan Laba Produk.*/
 
 //Credit Tegar Mandiri 2019
-//Ver. 0.27
-//Program have a much bug, i haven't fixed it.
-//The program is using Indonesia language (Bahasa).
+//Ver. 2.00
+//The program using Indonesia language (Bahasa).
 //Need to compile before run this program.
 //How to use  : -Download hpp.java file
                 -Compile the program, if using Windows can use Command Prompt (Javac) or Eclipse, or any software supported for
