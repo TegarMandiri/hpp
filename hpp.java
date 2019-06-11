@@ -1,5 +1,7 @@
 //Finished, will added more features++
-//Ver. 0.27
+//Ver. 2.00
+//Credit Tegar Mandiri 2019
+//Contact email: tegarmndr@gmail.com
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
@@ -8,15 +10,18 @@ public class hpp{
 	public static void main(String[] args){
 		Scanner scan = new Scanner (System.in);
 
-//Program menghitung Harga Pokok Produksi, Harga jual per unit, dan Laba Produk.
-//Credit Tegar Mandiri 2019
-//Input Positive Number Without Separate (comma, dot, space), just input positive number.
+	//Variable
+
+		String warning = "Masukan angka yang benar! \n";
+		String warningNumber = "Masukan angka positif! \n";
+		boolean benar = true;
 
 	//Title
+
 		System.out.println(" ");
 		System.out.println(" ");
 		System.out.println("//Copyright Tegar Mandiri 2019");
-		System.out.println("-Ver. 0.27");
+		System.out.println("-Ver. 1.25");
 		System.out.println(" ");
 		System.out.println("********** Menghitung biaya HPP, harga jual per Unit dan Laba **********");
 		System.out.println(" ");
@@ -26,132 +31,343 @@ public class hpp{
 		System.out.println(" ");
 
 	//Bahan baku
-		int total = 0;
-		System.out.print("Total jenis bahan baku      => ");
-		int numofbhn = scan.nextInt();
+
+		int totalBahanBaku = 0;
+		int jumlahBahanBaku = 0;
+
+		while (benar) {
+
+			System.out.print("Total jenis bahan baku      => ");
+
+				try {
+
+					jumlahBahanBaku = scan.nextInt();
+					
+					if (jumlahBahanBaku >= 0) {
+
+						benar = false;
+					
+					} else {
+					
+						System.out.println(warningNumber);
+					
+					}
+
+				} catch (Exception e) {
+
+					System.out.println(warning);
+					scan.nextLine();
+					benar = true;
+
+				}
+			}
+		benar = true;
 
 		//Array bahan baku
-		int arrofbhn[] = new int[numofbhn];
 
-		for (int s = 0; s < arrofbhn.length; s++){
-			System.out.print("Biaya bahan baku        " + (s+1) + " = Rp ");
-			arrofbhn[s] = scan.nextInt();
-		}
+			int arrBahanBaku[] = new int[jumlahBahanBaku];
+
+			for (int s = 0; s < arrBahanBaku.length; s++){
+
+				System.out.print("Biaya bahan baku        " + (s+1) + " = Rp ");
+
+					try {
+
+						arrBahanBaku[s] = scan.nextInt();
+
+						if (arrBahanBaku[s] >= 0) {
+
+							benar = false;
+					
+						} else {
+					
+							System.out.println(warningNumber);
+					
+						}
+
+					} catch (Exception e) {
+
+						System.out.println(warning);
+						s--;
+						scan.nextLine();
+
+					}
+				}
+				benar = true;
 
 		//Total bahan baku
+
 			System.out.println(" ");
 			System.out.println("---------------------------------");
-		for (int i = 0; i < arrofbhn.length; i++)
-			total += (int)arrofbhn[i];
-			System.out.println("Total biaya bahan baku          = Rp " + total);
+
+			for (int i = 0; i < arrBahanBaku.length; i++)
+				totalBahanBaku += (int)arrBahanBaku[i];
+				DecimalFormat totalBahanBakuformat = new DecimalFormat("#,###");
+				System.out.println("Total biaya bahan baku          = Rp " + totalBahanBakuformat.format(totalBahanBaku));
 
 
 	//Tenaga kerja
+
 		System.out.println(" ");
 		System.out.println(" ");
 		System.out.println("---------------- Tenaga Kerja ----------------");
 		System.out.println(" ");
-		int tenagakerja, waktu;
-		double harga;
+		Integer tenagaKerja = null, waktuKerja = null;
+		Double hargaKerja = null;
 
-		System.out.print("Jumlah tenaga kerja		= ");
-		tenagakerja = scan.nextInt();
+		while (benar) {
 
-		System.out.print("Gaji per orang			= Rp ");
-		harga = scan.nextDouble();
+			System.out.print("Jumlah tenaga kerja		= ");
 
-		System.out.print("Waktu kerja (hari)		= ");
-		waktu= scan.nextInt();
-		
+			try {
+
+				tenagaKerja = scan.nextInt();
+
+				if (tenagaKerja >= 0) {
+
+					benar = false;
+					
+				} else {
+					
+					System.out.println(warningNumber);
+					
+				}
+
+			} catch (Exception e) {
+
+					System.out.println(warning);
+					scan.nextLine();
+					benar = true;
+
+				}
+			} 
+		benar = true;
+
+		while (benar) {
+
+			System.out.print("Gaji per orang			= Rp ");
+
+			try {
+
+				hargaKerja = scan.nextDouble();
+
+				if (hargaKerja >= 0) {
+
+					benar = false;
+					
+				} else {
+					
+					System.out.println(warningNumber);
+					
+				}
+
+			} catch (Exception e) {
+
+					System.out.println(warning);
+					scan.nextLine();
+					benar = true;
+
+				}
+			}
+		benar = true;
+
+		while (benar) {
+
+			System.out.print("waktu kerja (hari)		= ");
+
+			try {
+
+				waktuKerja = scan.nextInt();
+				
+				if (waktuKerja >= 0) {
+
+					benar = false;
+					
+				} else {
+					
+					System.out.println(warningNumber);
+					
+				}
+
+			} catch (Exception e) {
+
+					System.out.println(warning);
+					scan.nextLine();
+					benar = true;
+
+				}
+			}
+		benar = true;
+
 		//Total tenaga kerja
-		double tktotal = tenagakerja * waktu * harga;
-		System.out.println(" ");
-		DecimalFormat tktotalformat = new DecimalFormat("#.##");
-		System.out.println("---------------------------------");
-		System.out.println("Biaya Tenaga kerja		= Rp " + tktotalformat.format(tktotal));
-		System.out.println(" ");
-		System.out.println(" ");
+
+			Double totalTenagaKerja = tenagaKerja * waktuKerja * hargaKerja;
+			System.out.println(" ");
+			DecimalFormat totalTenagaKerjaformat = new DecimalFormat("#,###");
+			System.out.println("---------------------------------");
+			System.out.println("Biaya Tenaga kerja		= Rp " + totalTenagaKerjaformat.format(totalTenagaKerja));
+			System.out.println(" ");
+			System.out.println(" ");
 
 
 	//Overhead
-		int overhead, head;
+
+		int biayaOverhead = 0;
 		System.out.println("------------------ Overhead ------------------");
-		System.out.println(" "); 
-		System.out.print("Biaya Overhead 			= Rp ");
-		overhead = scan.nextInt();
-		System.out.println(" ");
 		System.out.println(" ");
 
+		while (benar) {
+
+			System.out.print("Biaya Overhead 			= Rp ");
+
+			try {
+
+				biayaOverhead = scan.nextInt();
+				System.out.println(" ");
+				System.out.println(" ");
+				
+				if (biayaOverhead >= 0) {
+
+					benar = false;
+					
+				} else {
+					
+					System.out.println(warningNumber);
+					
+				}
+			
+			} catch (Exception e) {
+			
+				System.out.println(warning);
+				scan.nextLine();
+				benar = true;
+			
+			}
+		}
+		benar = true;
 
 	//Menghitung per unit
-		Double unit, tunit;
+
+		Double perUnit = 0.0, totalUnit;
 		System.out.println("---------- Menghitung biaya per unit ----------");
 		System.out.println(" ");
 
-		Double alltotal = total + tktotal + overhead;
-		DecimalFormat alltotalformat = new DecimalFormat("#.##");
-		System.out.println("Total Harga Pokok Produksi 	= Rp " + alltotalformat.format(alltotal));
-		System.out.print("Masukan jumlah unit	        = ");
-		unit = scan.nextDouble();
+		Double totalSemua = totalBahanBaku + totalTenagaKerja + biayaOverhead;
+		DecimalFormat totalSemuaformat = new DecimalFormat("#,###");
+		System.out.println("Total Harga Pokok Produksi 	= Rp " + totalSemuaformat.format(totalSemua));
+
+		while (benar) {
+		
+			System.out.print("Masukan jumlah unit	        = ");
+		
+			try {
+
+				perUnit = scan.nextDouble();
+				
+				if (perUnit >= 0) {
+
+					benar = false;
+					
+				} else {
+					
+					System.out.println(warningNumber);
+					
+				}
+
+			} catch (Exception e) {
+
+				System.out.println(warning);
+				scan.nextLine();
+				benar = true;
+
+			}
+		}
+		benar = true;
 
 		//Total per unit
-		System.out.println(" ");
-		System.out.println("---------------------------------");
 
-		tunit = alltotal / unit;
-		DecimalFormat tunitformat = new DecimalFormat("#.##");
-		System.out.println("Harga per unit			= Rp " + tunitformat.format(tunit));
-		System.out.println("");
-		System.out.println("");
+			System.out.println(" ");
+			System.out.println("---------------------------------");
+
+			totalUnit = totalSemua / perUnit;
+			DecimalFormat totalUnitformat = new DecimalFormat("#,###");
+			System.out.println("Harga per unit			= Rp " + totalUnitformat.format(totalUnit));
+			System.out.println("");
+			System.out.println("");
 
 	//Keuntungan laba per unit
+
 		System.out.println("----------- Keuntungan Laba per unit ----------");
 		System.out.println(" ");
-		Double persen, hunit, lunit;
+		Double labaPersen = 0.0, hargaUnit, labaUnit;
 
-		System.out.println("Harga per unit			= Rp " + tunitformat.format(tunit));
-		System.out.print("Laba persen per unit 		= (%) ");
-		persen = scan.nextDouble();
+		System.out.println("Harga per unit			= Rp " + totalUnitformat.format(totalUnit));
+
+		while (benar) {
+		
+			System.out.print("Laba persen per unit 		= (%) ");
+		
+			try {
+
+				labaPersen = scan.nextDouble();
+
+				if (labaPersen >= 0) {
+
+					benar = false;
+					
+				} else {
+					
+					System.out.println(warningNumber);
+					
+				}
+
+			} catch (Exception e) {
+
+				System.out.println(warning);
+				scan.nextLine();
+				benar = true;
+
+			}
+		}
+		benar = true;
 
 		System.out.println(" ");
 		System.out.println("---------------------------------");
-		hunit = tunit + (tunit*persen/100);;
-		DecimalFormat hunitformat = new DecimalFormat("#.##");
-		System.out.println("Harga jual produk 		= Rp " + hunitformat.format(hunit));
+		hargaUnit = totalUnit + (totalUnit*labaPersen/100);
+		DecimalFormat hargaUnitformat = new DecimalFormat("#,###");
+		System.out.println("Harga jual produk 		= Rp " + hargaUnitformat.format(hargaUnit));
 
-		lunit = persen / 100 * tunit;
-		DecimalFormat lunitformat = new DecimalFormat("#.##");
-		System.out.println("Laba per unit 			= Rp " + lunitformat.format(lunit));
+		labaUnit = labaPersen / 100 * totalUnit;
+		DecimalFormat labaUnitformat = new DecimalFormat("#,###");
+		System.out.println("Laba per unit 			= Rp " + labaUnitformat.format(labaUnit));
 		System.out.println(" ");
 		System.out.println(" ");
 
 	//Keuntungan laba unit
+		
 		System.out.println("------------ Keuntungan Total Laba ------------");
 		System.out.println(" ");
-		Double tttunit, ttunit, talltotal, tlunit, ttlunit, ttttunit;
+		Double totalJumlahUnit, totalLabaUnit, totalYangDidapat;
 
-		tttunit = unit;
-		DecimalFormat tttunitformat = new DecimalFormat("#.##");
-		System.out.println("Total Unit 			= " + tttunitformat.format(tttunit));
+		totalJumlahUnit = perUnit;
+		DecimalFormat totalJumlahUnitformat = new DecimalFormat("#,###");
+		System.out.println("Total Unit 			= " + totalJumlahUnitformat.format(totalJumlahUnit));
 
-		System.out.println("Total Harga Pokok Produksi 	= Rp " + alltotalformat.format(alltotal));
+		System.out.println("Total Harga Pokok Produksi 	= Rp " + totalSemuaformat.format(totalSemua));
 
-		System.out.println("Harga jual produk 		= Rp " + hunitformat.format(hunit));
+		System.out.println("Harga jual produk 		= Rp " + hargaUnitformat.format(hargaUnit));
 
-		tlunit = lunit;
-		DecimalFormat tlunitformat = new DecimalFormat("#.##");
-		System.out.println("Laba per unit 			= Rp " + tlunitformat.format(tlunit));
+		System.out.println("Laba per unit 			= Rp " + labaUnitformat.format(labaUnit));
 		System.out.println(" ");
 
 		System.out.println("---------------------------------");
 
-		ttttunit = hunit * tttunit;
-		DecimalFormat ttttunitformat = new DecimalFormat("#.##");
-		System.out.println("Total yang didapatkan		= Rp " + ttttunitformat.format(ttttunit));
+		totalYangDidapat = hargaUnit * totalJumlahUnit;
+		DecimalFormat totalYangDidapatformat = new DecimalFormat("#,###");
+		System.out.println("Total yang didapatkan		= Rp " + totalYangDidapatformat.format(totalYangDidapat));
 
-		ttlunit = unit * tlunit;
-		DecimalFormat ttlunitformat = new DecimalFormat("#.##");
-		System.out.println("Total Laba 		 	= Rp " + ttlunitformat.format(ttlunit));
+		totalLabaUnit = perUnit * labaUnit;
+		DecimalFormat totalLabaUnitformat = new DecimalFormat("#,###");
+		System.out.println("Total Laba 		 	= Rp " + totalLabaUnitformat.format(totalLabaUnit));
 	}
 }
-
